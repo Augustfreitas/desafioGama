@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javafx.beans.binding.When;
 
 public class Livro {
 
@@ -35,6 +34,10 @@ public class Livro {
 
 	public Livro() {
 
+	}
+
+	public Autor getAutor(){
+		return this.autor;
 	}
 
 	public String getTitulo() {
@@ -85,19 +88,18 @@ public class Livro {
 					System.out.println(livros.get(j).getTitulo().intern());		
 				}
 			}
-		} 
+		} else{System.out.println("Livro não cadastrado!");}
 	}
 
 	public void mostraAutorLivro(String nome){
-		System.out.println(autor.autores.toString().contains(nome));
-        if (autor.autores.toString().contains(nome) == true) {
-			System.out.println("O escritor do livro  "+nome+" é: ");	
-			for (int i = 0; i < autor.autores.size(); i++) {
-					if (autor.autores.get(i).toString().contains(nome) == true) {
-						System.out.println(autor.autores.get(i).getNome().intern());		
-					}
-				}
-			}	
+        if (livros.toString().contains(nome) == true) {
+			System.out.println("O escritor do livro "+nome+" é: ");	
+			for (int i = 0; i < livros.size(); i++) {
+					if (livros.get(i).toString().contains(nome) == true) {
+						System.out.println(livros.get(i).getAutor().getNome());		
+					} 
+			} 
+		}else{System.out.println("Escritor não cadastrado!");}
     }
 
 	//livros.get(j).toString().contains(nome) == true;

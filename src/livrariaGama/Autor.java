@@ -11,6 +11,7 @@ public class Autor {
     private String sexo;
     List<Autor> autores = new ArrayList<Autor>();
     
+    
     //Livro livro = new Livro();
 
     public Autor() {
