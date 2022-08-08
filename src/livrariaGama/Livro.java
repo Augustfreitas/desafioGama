@@ -1,24 +1,25 @@
 package livrariaGama;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
 public class Livro {
 
 	private String titulo;
-	//private String autor;
+	// private String autor;
 	private Date ano;
 	private int edicao;
 	private String editora;
 	private String ISBN;
-	List<Livro> livros	= new ArrayList<Livro>();
+	List<Livro> livros = new ArrayList<Livro>();
 
 	Autor autor = new Autor();
 
-	public Livro(String titulo, Autor autor, String ano, int edicao, String editora, String ISBN) throws ParseException {
+	public Livro(String titulo, Autor autor, String ano, int edicao, String editora, String ISBN)
+			throws ParseException {
 		this.titulo = titulo;
 		this.autor = autor;
 		Date Ano = new SimpleDateFormat("dd/MM/yyyy").parse(ano);
@@ -28,15 +29,16 @@ public class Livro {
 		this.ISBN = ISBN;
 	}
 
-	public void setLivro(String titulo, Autor autor, String ano, int edicao, String editora, String ISBN) throws ParseException{
-		livros.add(new Livro( titulo,  autor,  ano,  edicao, editora, ISBN));
+	public void setLivro(String titulo, Autor autor, String ano, int edicao, String editora, String ISBN)
+			throws ParseException {
+		livros.add(new Livro(titulo, autor, ano, edicao, editora, ISBN));
 	}
 
 	public Livro() {
 
 	}
 
-	public Autor getAutor(){
+	public Autor getAutor() {
 		return this.autor;
 	}
 
@@ -80,35 +82,39 @@ public class Livro {
 		ISBN = iSBN;
 	}
 
-	public void mostraLivroDoAutor(String nome){
+	public void mostraLivroDoAutor(String nome) {
 		if (livros.toString().contains(nome) == true) {
-			System.out.println("Os Livros cadastrados do escritor "+nome+" são: ");	
+			System.out.println("Os Livros cadastrados do escritor " + nome + " são: ");
 			for (int j = 0; j < livros.size(); j++) {
 				if (livros.get(j).toString().contains(nome) == true) {
-					System.out.println(livros.get(j).getTitulo().intern());		
+					System.out.println(livros.get(j).getTitulo().intern());
 				}
 			}
-		} else{System.out.println("Livro não cadastrado!");}
+		} else {
+			System.out.println("Livro não cadastrado!");
+		}
 	}
 
-	public void mostraAutorLivro(String nome){
-        if (livros.toString().contains(nome) == true) {
-			System.out.println("O escritor do livro "+nome+" é: ");	
+	public void mostraAutorLivro(String nome) {
+		if (livros.toString().contains(nome) == true) {
+			System.out.println("O escritor do livro " + nome + " é: ");
 			for (int i = 0; i < livros.size(); i++) {
-					if (livros.get(i).toString().contains(nome) == true) {
-						System.out.println(livros.get(i).getAutor().getNome());		
-					} 
-			} 
-		}else{System.out.println("Escritor não cadastrado!");}
-    }
+				if (livros.get(i).toString().contains(nome) == true) {
+					String autor = livros.get(i).getAutor().getNome();
+					System.out.println(autor);
+				}
+			}
+		} else {
+			System.out.println("Escritor não cadastrado!");
+		}
+	}
 
-	//livros.get(j).toString().contains(nome) == true;
 	@Override
 	public String toString() {
-		//System.out.println("===Livro===");
-		return 	"Titulo = " + getTitulo() + 
-			   	"\nAno = " + getAno() + 
-				"\nEdicao = " + getEdicao() + 
+		// System.out.println("===Livro===");
+		return "Titulo = " + getTitulo() +
+				"\nAno = " + getAno() +
+				"\nEdicao = " + getEdicao() +
 				"\nEditora = " + getEditora() +
 				"\nISBN = " + getISBN() +
 				"\nAutor = " + autor.getNome();

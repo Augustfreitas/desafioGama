@@ -109,7 +109,7 @@ public class Emprestimo {
 					multa *= diasDiferenca;
 					this.devolvido = devolvido;
 					System.out.println(devolvido);
-				return "Em atraso!\n"+ String.format("Valor a ser pago ser pago: R$%.2f", multa);
+				return "Em atraso!\n"+ String.format("Valor a ser pago: R$%.2f", multa);
 				}
 			}
 		}
@@ -137,5 +137,4 @@ public class Emprestimo {
 				"\nData de devolução = " + dataFinalDevolucao(10) +
 				"\nSituação = " + situacao(true);
 	}
-	// "\nSituação = " + getSituacao(situacao);
 }

@@ -25,13 +25,13 @@ public class App {
 
 		livro.mostraLivroDoAutor("Patati");
 		livro.mostraLivroDoAutor("João");
-		System.out.println("__________________");
-		livro.mostraAutorLivro("Harry Potter");
+		System.out.println("---------------------");
+		livro.mostraAutorLivro("O Aluno Iluminado");
 		livro.mostraAutorLivro("Pequeno principe");
 
-		Emprestimo emprestimo = new Emprestimo(livro.livros.get(0),user,1);
+		/*Emprestimo emprestimo = new Emprestimo(livro.livros.get(0),user,1);
 		System.out.println("++++++++++++++++++");
-		emprestimo.mostrarEmprestimo(2,true);
+		emprestimo.mostrarEmprestimo(7,false);*/
 		
 
     }
